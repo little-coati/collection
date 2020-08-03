@@ -16,14 +16,22 @@ import java.util.Locale;
 public class DateUtil {
 
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
      * 获取当前日期
-     * @return
      */
     public synchronized static String getCurrentDate() {
         Date date = new Date();
         return sdf.format(date);
+    }
+
+    /**
+     * 获取当前时间
+     */
+    public synchronized static String getCurrentTime() {
+        Date date = new Date();
+        return simpleDateFormat.format(date);
     }
 
     /**
@@ -39,6 +47,12 @@ public class DateUtil {
     }
 
 
+    /**
+     * 获取指定格式的当前时间
+     *
+     * @param format 指定的时间格式
+     * @return 指定格式的当前时间字符串
+     */
     public static String getNowTimeFormat(String format) {
         SimpleDateFormat dateformat = new SimpleDateFormat(format);
         return dateformat.format(new Date());

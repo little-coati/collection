@@ -3,7 +3,7 @@ package com.my.common.util;
 import java.util.UUID;
 
 /**
- * @description:
+ * @description: 生成32位的UUID
  * @author: jiangjie
  * @date: 2019/11/20
  */
