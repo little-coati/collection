@@ -76,6 +76,6 @@ spring-boot-starter-parent中已经引入了一个对应版本的web，但是引
     <modules>
         <!-- 基础jar包 -->
         <module>my-common</module>
-        <module>demo</module>
+        <module>platform</module>
     </modules>
 </project>

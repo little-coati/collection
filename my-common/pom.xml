@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--父模块信息-->
     <parent>
         <artifactId>collection</artifactId>
         <groupId>com.zlx</groupId>
@@ -9,6 +11,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <!--本模块信息-->
     <groupId>com.nari</groupId>
     <artifactId>my-common</artifactId>
     <version>1.0</version>
