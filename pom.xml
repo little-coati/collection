@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <!--继承说明：这里继承Spring Boot提供的父工程-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.zlx</groupId>
+    <artifactId>collection</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>collection</name>
+    <description>我的收集和尝试</description>
+
+    <!--属性说明-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--依赖版本统一管理-->
+    <dependencyManagement>
+        <dependencies>
+<!--注意，下面这个依赖千万不能引入，在创建项目的时候不要勾选web，否则就会引入如下一个没有版本的web，但是在上面的
+spring-boot-starter-parent中已经引入了一个对应版本的web，但是引入的这个五版本的web会覆盖这个指定版本的web。
+从而导致一系列问题，比如lombok不能正常使用，加了@Slf4j注解，却找不到log.info方法-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            </dependency>-->
+
+            <!--Lombok get set 构造方法 toString logger 自动生成工具-->
+            <!--注意：需要IDE也安装对应插件，可直接在plugins里面搜，不安装，语法报错但不影响编译和运行-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+
+            <!--基础包-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <!-- 基础jar包 -->
+        <module>my-common</module>
+    </modules>
+</project>
