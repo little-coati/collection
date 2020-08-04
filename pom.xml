@@ -73,9 +73,10 @@ spring-boot-starter-parent中已经引入了一个对应版本的web，但是引
         </dependencies>
     </dependencyManagement>
 
+    <!--子模块-->
     <modules>
         <!-- 基础jar包 -->
         <module>my-common</module>
-        <module>platform</module>
+        <module>my-platform</module>
     </modules>
 </project>
