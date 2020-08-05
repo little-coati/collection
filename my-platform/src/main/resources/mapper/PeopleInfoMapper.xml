@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.platform.mapper.PeopleInfoMapper">
+
+<!--映射-->
+
+
+	<resultMap id="appInfoByFileVo" type="com.my.platform.entity.PeopleInfo">
+		<result column="id" jdbcType="VARCHAR" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="sex" jdbcType="VARCHAR" property="sex" />
+		<result column="birthday" jdbcType="VARCHAR" property="birthday" />
+		<result column="birth_country" jdbcType="VARCHAR" property="birthCountry" />
+		<result column="birth_province" jdbcType="VARCHAR" property="birthProvince" />
+		<result column="birth_city" jdbcType="VARCHAR" property="birthCity" />
+		<result column="birth_address" jdbcType="VARCHAR" property="birthAddress" />
+		<result column="relation" jdbcType="VARCHAR" property="relation" />
+		<result column="describe" jdbcType="VARCHAR" property="describe" />
+		<result column="short_describe" jdbcType="VARCHAR" property="shortDescribe" />
+		<result column="university" jdbcType="VARCHAR" property="university" />
+		<result column="education_level" jdbcType="VARCHAR" property="educationLevel" />
+		<result column="created_by_id" jdbcType="VARCHAR" property="createdById" />
+		<result column="created_by_name" jdbcType="VARCHAR" property="createdByName" />
+		<result column="created_at" jdbcType="VARCHAR" property="createdAt" />
+		<result column="update_by_id" jdbcType="VARCHAR" property="updateById" />
+		<result column="update_by_name" jdbcType="VARCHAR" property="updateByName" />
+		<result column="update_at" jdbcType="VARCHAR" property="updateAt" />
+		<result column="deleted_flag" jdbcType="VARCHAR" property="deletedFlag" />
+		<result column="deleted_by_id" jdbcType="VARCHAR" property="deletedById" />
+		<result column="deleted_by_name" jdbcType="VARCHAR" property="deletedByName" />
+		<result column="deleted_at" jdbcType="VARCHAR" property="deletedAt" />
+	</resultMap>
+
+<!--查询-->
+
+
+	<select id="queryPeopleInfoForMeByCond" resultType="com.my.platform.entity.PeopleInfo">
+		select * from people
+		<where>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(name)">
+				and `name` = #{name}
+			</if>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(name)">
+				and sex = #{sex}
+			</if>
+		</where>
+	</select>
+
+	<select id="queryPeopleInfoByCond" resultType="com.my.platform.entity.PeopleInfo">
+
+	</select>
+
+</mapper>

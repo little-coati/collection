@@ -1,6 +1,10 @@
 package com.my.platform.mapper;
 
+import com.my.platform.entity.PeopleInfo;
+import com.my.platform.vo.reqVo.PeopleInfoReqVo;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author: 周立雄
@@ -10,4 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PeopleInfoMapper {
 
+    List<PeopleInfo> queryPeopleInfoForMeByCond(PeopleInfoReqVo reqVo);
+
+    List<PeopleInfo> queryPeopleInfoByCond(PeopleInfoReqVo reqVo);
 }

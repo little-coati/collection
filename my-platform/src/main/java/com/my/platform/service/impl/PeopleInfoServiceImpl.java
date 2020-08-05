@@ -7,6 +7,8 @@ import com.my.platform.vo.reqVo.PeopleInfoReqVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: 周立雄
  * @version: v1.0
@@ -20,7 +22,8 @@ public class PeopleInfoServiceImpl implements PeopleInfoService {
     private PeopleInfoMapper peopleInfoMapper;
 
     @Override
-    public PeopleInfo queryPeopleInfoByCond(PeopleInfoReqVo reqVo) {
-        return null;
+    public List<PeopleInfo> queryPeopleInfoByCond(PeopleInfoReqVo reqVo) {
+        List<PeopleInfo> list = peopleInfoMapper.queryPeopleInfoByCond(reqVo);
+        return list;
     }
 }
