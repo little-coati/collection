@@ -1,4 +1,4 @@
-package com.my.common.entity;
+package com.my.platform.entity;
 
 import lombok.Data;
 
