@@ -4,8 +4,8 @@
 
 <!--映射-->
 
-
-	<resultMap id="appInfoByFileVo" type="com.my.platform.entity.PeopleInfo">
+<!--人员信息-->
+	<resultMap id="peopleInfo" type="com.my.platform.entity.PeopleInfo">
 		<result column="id" jdbcType="VARCHAR" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="sex" jdbcType="VARCHAR" property="sex" />
@@ -33,21 +33,31 @@
 
 <!--查询-->
 
-
-	<select id="queryPeopleInfoForMeByCond" resultType="com.my.platform.entity.PeopleInfo">
+<!--根据条件查询人员身份信息（本人）-->
+	<select id="queryPeopleInfoForMeByCond" resultMap="peopleInfo">
 		select * from people
 		<where>
 			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(name)">
 				and `name` = #{name}
 			</if>
-			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(name)">
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(sex)">
 				and sex = #{sex}
 			</if>
 		</where>
 	</select>
 
-	<select id="queryPeopleInfoByCond" resultType="com.my.platform.entity.PeopleInfo">
-
+<!--根据条件查询人员身份信息（非本人）-->
+	<select id="queryPeopleInfoByCond" resultMap="peopleInfo">
+		select id,`name`,sex,birthday,birth_country,birth_province,short_describe,university,education_level
+		from people
+		<where>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(name)">
+				and `name` = #{name}
+			</if>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(sex)">
+				and sex = #{sex}
+			</if>
+		</where>
 	</select>
 
 </mapper>
