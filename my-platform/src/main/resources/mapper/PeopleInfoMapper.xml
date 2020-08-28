@@ -4,7 +4,7 @@
 
 <!--映射-->
 
-<!--人员信息-->
+	<!--人员信息-->
 	<resultMap id="peopleInfo" type="com.my.platform.entity.PeopleInfo">
 		<result column="id" jdbcType="VARCHAR" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
@@ -33,7 +33,7 @@
 
 <!--查询-->
 
-<!--根据条件查询人员身份信息（本人）-->
+	<!--根据条件查询人员身份信息（本人）-->
 	<select id="queryPeopleInfoForMeByCond" resultMap="peopleInfo">
 		select * from people
 		<where>
@@ -46,7 +46,7 @@
 		</where>
 	</select>
 
-<!--根据条件查询人员身份信息（非本人）-->
+	<!--根据条件查询人员身份信息（非本人）-->
 	<select id="queryPeopleInfoByCond" resultMap="peopleInfo">
 		select id,`name`,sex,birthday,birth_country,birth_province,short_describe,university,education_level
 		from people

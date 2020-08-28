@@ -6,5 +6,10 @@ package com.my.platform.service;
  * @date: 2020/8/3
  */
 public interface TestService {
-    String getYourWord();
+    /**
+     * 打印完整的报错堆栈信息
+     *
+     * @return 报错堆栈信息
+     */
+    void testException();
 }

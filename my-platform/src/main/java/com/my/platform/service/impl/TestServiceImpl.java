@@ -10,8 +10,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TestServiceImpl implements TestService {
+    /**
+     * 打印完整的报错堆栈信息
+     *
+     * @return 报错堆栈信息
+     */
     @Override
-    public String getYourWord() {
-        return "我的电脑开机键很独特";
+    public void testException() {
+        int[] arr1 = new int[1];
+        int[] arr2 = {1,2,3,4,5};
+        int[] arr3 = new int[] {1,2,3};
+        System.out.println(arr1[2]);
     }
 }

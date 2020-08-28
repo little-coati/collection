@@ -23,7 +23,7 @@ public class PeopleInfoServiceImpl implements PeopleInfoService {
     private PeopleInfoMapper peopleInfoMapper;
 
     /**
-     * 根据条件查询人员身份信息
+     * 根据条件查询人员身份信息（非本人）
      *
      * @param reqVo 查询传参
      * @return 查询结果
