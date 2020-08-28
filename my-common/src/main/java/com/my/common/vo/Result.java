@@ -31,7 +31,6 @@ public class Result<T> implements Serializable {
 	/**
 	 * 时间戳
 	 */
-
 	private long timestamp = System.currentTimeMillis();
 
 	public static long getSerialVersionUID() {

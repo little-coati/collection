@@ -7,7 +7,7 @@ package com.my.platform.service;
  */
 public interface TestService {
     /**
-     * 打印完整的报错堆栈信息
+     * 测试全局捕捉异常信息
      *
      * @return 报错堆栈信息
      */

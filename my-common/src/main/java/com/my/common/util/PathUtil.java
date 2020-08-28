@@ -15,8 +15,10 @@ public class PathUtil {
      * @return
      */
     public static String Combine(String... args) {
-        if (args == null || args.length == 0)
+        if (args == null || args.length == 0) {
             return "";
+        }
+
         StringBuffer sbf = new StringBuffer();
         for (String s : args) {
 //			//纯协议开头不处理，如：http://,d:/,linux首个/不处理
@@ -87,8 +89,9 @@ public class PathUtil {
      */
     public static boolean createDirectory(String dirName) {
         File file = new File(dirName);
-        if (file.exists())
+        if (file.exists()) {
             return true;
+        }
         return file.mkdirs();
     }
 
