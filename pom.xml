@@ -27,7 +27,7 @@
     <dependencyManagement>
         <dependencies>
 <!--注意，下面这个依赖千万不能引入，在创建项目的时候不要勾选web，否则就会引入如下一个没有版本的web，但是在上面的
-spring-boot-starter-parent中已经引入了一个对应版本的web，但是引入的这个五版本的web会覆盖这个指定版本的web。
+spring-boot-starter-parent中已经引入了一个对应版本的web，但是引入的这个无版本的web会覆盖这个指定版本的web。
 从而导致一系列问题，比如lombok不能正常使用，加了@Slf4j注解，却找不到log.info方法-->
 <!--            <dependency>-->
 <!--                <groupId>org.springframework.boot</groupId>-->
