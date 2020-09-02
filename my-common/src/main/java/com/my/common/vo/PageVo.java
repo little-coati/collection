@@ -1,5 +1,7 @@
 package com.my.common.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  * @description: 简化版的分页对象，PageHelper的分页对象太完善太复杂了
  * @date: 2020/8/2
  */
+@Data
 public class PageVo<T> implements Serializable {
     private static final long serialVersionUID = -3256519103131877313L;
 
@@ -32,37 +35,5 @@ public class PageVo<T> implements Serializable {
     public PageVo() {
         this.pageNum = 1;
         this.pageSize = 10;
-    }
-
-    public int getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
-    }
-
-    public List<T> getList() {
-        return list;
-    }
-
-    public void setList(List<T> list) {
-        this.list = list;
     }
 }

@@ -43,6 +43,9 @@
 			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(sex)">
 				and sex = #{sex}
 			</if>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(tel)">
+				and tel = #{tel}
+			</if>
 		</where>
 	</select>
 
@@ -56,6 +59,9 @@
 			</if>
 			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(sex)">
 				and sex = #{sex}
+			</if>
+			<if test="@com.my.common.util.MybatisTestUtil@isNotEmpty(tel)">
+				and sex = #{tel}
 			</if>
 		</where>
 	</select>

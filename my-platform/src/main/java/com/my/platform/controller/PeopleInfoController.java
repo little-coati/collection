@@ -3,9 +3,12 @@ package com.my.platform.controller;
 import com.my.common.vo.Result;
 import com.my.platform.entity.PeopleInfo;
 import com.my.platform.service.PeopleInfoService;
-import com.my.platform.vo.reqVo.PeopleInfoReqVo;
+import com.my.platform.vo.reqvo.PeopleInfoReqVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +19,10 @@ import java.util.List;
 
 /**
  * @description: 人员信息相关
- * @author: Zhou Lixiong
+ * @author: Karl
  * @date: 2020/8/4
  */
+@Slf4j
 @RestController
 @RequestMapping("pi")
 public class PeopleInfoController {
@@ -38,9 +42,14 @@ public class PeopleInfoController {
      * @return 查询结果
      */
     @PostMapping("getPI")
-    public Result getPeopleInfoByCond(@RequestBody PeopleInfoReqVo reqVo) {
+    public Result getPeopleInfoByCond(@Validated @RequestBody PeopleInfoReqVo reqVo, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return Result.error(bindingResult.getFieldError().getDefaultMessage());
+        }
+        log.info("查询人员身份信息，传参：{}",reqVo);
         List<PeopleInfo> list;
-        if (StringUtils.equals(reqVo.getQueryType(),"0")) {
+        String mine = "0";
+        if (StringUtils.equals(reqVo.getQueryType(),mine)) {
             list = peopleInfoServiceForMe.queryPeopleInfoByCond(reqVo);
         } else {
             list = peopleInfoService.queryPeopleInfoByCond(reqVo);

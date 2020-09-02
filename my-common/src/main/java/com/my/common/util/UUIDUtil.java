@@ -4,7 +4,7 @@ import java.util.UUID;
 
 /**
  * @description: 生成32位的UUID
- * @author: jiangjie
+ * @author: Karl
  * @date: 2019/11/20
  */
 public class UUIDUtil {

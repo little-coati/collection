@@ -4,7 +4,7 @@ import com.my.platform.entity.PeopleInfo;
 import com.my.platform.mapper.PeopleInfoMapper;
 import com.my.platform.service.PeopleInfoService;
 import com.my.platform.util.TransChineseUtil;
-import com.my.platform.vo.reqVo.PeopleInfoReqVo;
+import com.my.platform.vo.reqvo.PeopleInfoReqVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

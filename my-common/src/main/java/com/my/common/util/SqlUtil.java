@@ -4,10 +4,9 @@ package com.my.common.util;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @author: 周立雄
- * @version: v1.0
  * @description: 模糊查询字符串特殊字符处理
- * @date:2020/3/9
+ * @author: Karl
+ * @date: 2020/3/9
  */
 public class SqlUtil {
 

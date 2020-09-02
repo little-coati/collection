@@ -3,8 +3,7 @@ package com.my.common.exception;
 import com.my.common.constant.CommonConstant;
 import com.my.common.util.StringUtil;
 import com.my.common.vo.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -18,10 +17,9 @@ import java.util.MissingResourceException;
  * 全局异常处理器
  * @author studyharder
  */
+@Slf4j
 @RestControllerAdvice
 public class MyExceptionHandler {
-
-    private static Logger log = LoggerFactory.getLogger("errorLog");
 
     /**
      * 处理自定义异常
