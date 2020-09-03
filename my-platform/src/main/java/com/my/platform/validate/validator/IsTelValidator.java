@@ -14,9 +14,6 @@ import javax.validation.ConstraintValidatorContext;
  */
 public class IsTelValidator implements ConstraintValidator<IsTel,String> {
     @Override
-    public void initialize(IsTel constraintAnnotation) { }
-
-    @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
         if(StringUtils.isEmpty(value)) {
             return true;

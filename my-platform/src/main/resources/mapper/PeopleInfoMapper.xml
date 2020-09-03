@@ -9,6 +9,7 @@
 		<result column="id" jdbcType="VARCHAR" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="sex" jdbcType="VARCHAR" property="sex" />
+		<result column="tel" jdbcType="VARCHAR" property="tel" />
 		<result column="birthday" jdbcType="VARCHAR" property="birthday" />
 		<result column="birth_country" jdbcType="VARCHAR" property="birthCountry" />
 		<result column="birth_province" jdbcType="VARCHAR" property="birthProvince" />

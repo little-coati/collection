@@ -19,7 +19,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = {IsSex.class })
+@Constraint(validatedBy = IsSex.class)
 public @interface Sex {
     String message() default "性别枚举项传参错误";
 

@@ -1,10 +1,13 @@
 package com.my.platform.entity;
 
+import lombok.Data;
+
 /**
  * @description: 人员信息实体类
- * @author: Zhou Lixiong
+ * @author: Karl
  * @date: 2020/8/4
  */
+@Data
 public class PeopleInfo {
     /**
      * 主键
@@ -18,9 +21,13 @@ public class PeopleInfo {
      * 性别
      *      0：男
      *      1：女
-     *      3：跨性别者
+     *      2：跨性别者
      */
     private String sex;
+    /**
+     * 手机号码
+     */
+    private String tel;
     /**
      * 出生日期
      */
@@ -106,188 +113,4 @@ public class PeopleInfo {
      * 删除时间
      */
     private String deletedAt;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getBirthCountry() {
-        return birthCountry;
-    }
-
-    public void setBirthCountry(String birthCountry) {
-        this.birthCountry = birthCountry;
-    }
-
-    public String getBirthProvince() {
-        return birthProvince;
-    }
-
-    public void setBirthProvince(String birthProvince) {
-        this.birthProvince = birthProvince;
-    }
-
-    public String getBirthCity() {
-        return birthCity;
-    }
-
-    public void setBirthCity(String birthCity) {
-        this.birthCity = birthCity;
-    }
-
-    public String getBirthAddress() {
-        return birthAddress;
-    }
-
-    public void setBirthAddress(String birthAddress) {
-        this.birthAddress = birthAddress;
-    }
-
-    public String getRelation() {
-        return relation;
-    }
-
-    public void setRelation(String relation) {
-        this.relation = relation;
-    }
-
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
-    }
-
-    public String getShortDescribe() {
-        return shortDescribe;
-    }
-
-    public void setShortDescribe(String shortDescribe) {
-        this.shortDescribe = shortDescribe;
-    }
-
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
-    }
-
-    public String getEducationLevel() {
-        return educationLevel;
-    }
-
-    public void setEducationLevel(String educationLevel) {
-        this.educationLevel = educationLevel;
-    }
-
-    public String getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(String createdById) {
-        this.createdById = createdById;
-    }
-
-    public String getCreatedByName() {
-        return createdByName;
-    }
-
-    public void setCreatedByName(String createdByName) {
-        this.createdByName = createdByName;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdateById() {
-        return updateById;
-    }
-
-    public void setUpdateById(String updateById) {
-        this.updateById = updateById;
-    }
-
-    public String getUpdateByName() {
-        return updateByName;
-    }
-
-    public void setUpdateByName(String updateByName) {
-        this.updateByName = updateByName;
-    }
-
-    public String getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public String getDeletedFlag() {
-        return deletedFlag;
-    }
-
-    public void setDeletedFlag(String deletedFlag) {
-        this.deletedFlag = deletedFlag;
-    }
-
-    public String getDeletedById() {
-        return deletedById;
-    }
-
-    public void setDeletedById(String deletedById) {
-        this.deletedById = deletedById;
-    }
-
-    public String getDeletedByName() {
-        return deletedByName;
-    }
-
-    public void setDeletedByName(String deletedByName) {
-        this.deletedByName = deletedByName;
-    }
-
-    public String getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
-    }
 }
