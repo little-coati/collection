@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @description:
- * @author: Zhou Lixiong
+ * @author: Karl
  * @date: 2020/8/3
  */
 @Service
@@ -20,8 +20,8 @@ public class TestServiceImpl implements TestService {
 
         //数组的三种声明方式
         int[] arr1 = new int[1];
-        int[] arr2 = {1,2,3,4,5};
-        int[] arr3 = new int[] {1,2,3};
+        int[] arr2 = {1, 2, 3, 4, 5};
+        int[] arr3 = new int[]{1, 2, 3};
         System.out.println(arr1[2]);
     }
 }

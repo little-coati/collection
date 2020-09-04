@@ -2,7 +2,7 @@ package com.my.platform.service;
 
 /**
  * @description:
- * @author: Zhou Lixiong
+ * @author: Karl
  * @date: 2020/8/3
  */
 public interface TestService {
