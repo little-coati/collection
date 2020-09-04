@@ -22,12 +22,12 @@ public class SqlUtil {
         if (StringUtils.isBlank(specialWord)) {
             return specialWord;
         }
-         String[] fbsArr = { "\\","$","(", ")","*","+",".","[", "]","?","^","{","}","|","%","_" };
-         for (String key : fbsArr) {
-             if (specialWord.contains(key)) {
-                 specialWord = specialWord.replace(key, "\\" + key);
-             }
-         }
+        String[] fbsArr = {"\\", "$", "(", ")", "*", "+", ".", "[", "]", "?", "^", "{", "}", "|", "%", "_"};
+        for (String key : fbsArr) {
+            if (specialWord.contains(key)) {
+                specialWord = specialWord.replace(key, "\\" + key);
+            }
+        }
         return specialWord;
     }
 }

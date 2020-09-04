@@ -15,13 +15,14 @@ public class PathManipulationUtil {
 
     //合法路径的白名单字符
     private final static Map<String, String> pathCharWhiteList = new HashMap<String, String>();
-    static{
+
+    static {
         //路径字符白名单
         String pathCharWhiteListResources = "abcdefghijklmnopqrstuvwxyz_123457890ABCDEFGHIJKLMNOPQRSTUVWXYZ./\\";
         if (StringUtils.hasLength(pathCharWhiteListResources)) {
             for (int i = 0; i < pathCharWhiteListResources.length(); i++) {
                 String c = String.valueOf(pathCharWhiteListResources.charAt(i));
-                pathCharWhiteList.put(c,c);
+                pathCharWhiteList.put(c, c);
 
             }
         }
@@ -29,6 +30,7 @@ public class PathManipulationUtil {
 
     /**
      * 过滤../   ./
+     *
      * @param filePath
      * @return
      */
@@ -40,7 +42,8 @@ public class PathManipulationUtil {
             String nextStr = null;
             try {
                 nextStr = String.valueOf(filePath.charAt(i + 1));
-            } catch (Exception e) {}
+            } catch (Exception e) {
+            }
 
             String curListStr = pathCharWhiteList.get(curStr);
             if (curListStr != null && curStr == "\\") {
@@ -48,9 +51,9 @@ public class PathManipulationUtil {
                 if (null != sysFileSeparator && sysFileSeparator.equals(curStr)) {
                     temp += curStr;
                 }
-            }else if(curListStr != null && (!".".equals(curStr))) {
+            } else if (curListStr != null && (!".".equals(curStr))) {
                 temp += curStr;
-            } else if (curListStr!= null && (".".equals(curStr)) &&(!".".equals(nextStr)) && (!"\\".equals(nextStr)) && (!"/".equals(nextStr))) {//过滤../   ./
+            } else if (curListStr != null && (".".equals(curStr)) && (!".".equals(nextStr)) && (!"\\".equals(nextStr)) && (!"/".equals(nextStr))) {//过滤../   ./
                 temp += curStr;
             }
         }
@@ -136,8 +139,8 @@ public class PathManipulationUtil {
         String temp = "";
         for (int i = 0; i < path.length(); i++) {
 
-            if (map.get(path.charAt(i)+"")!=null) {
-                temp += map.get(path.charAt(i)+"");
+            if (map.get(path.charAt(i) + "") != null) {
+                temp += map.get(path.charAt(i) + "");
             }
         }
         path = temp;

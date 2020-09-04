@@ -1,6 +1,7 @@
 package com.my.common.util;
 
 import lombok.extern.slf4j.Slf4j;
+
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -36,6 +37,7 @@ public class DateUtil {
 
     /**
      * 获取上个月的日期
+     *
      * @return
      */
     public synchronized static String getCurrentBeforeMonth() {
@@ -98,14 +100,14 @@ public class DateUtil {
         return time;
     }
 
-    public static long StringToLong(String ts)  {
+    public static long StringToLong(String ts) {
         SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date time = null;
         try {
             time = (Date) dateformat.parse(ts);
         } catch (ParseException e) {
-           log.info("DateUtil Method StringToLong ParseException");
-         }
+            log.info("DateUtil Method StringToLong ParseException");
+        }
 
         if (null != time) {
             return time.getTime();
@@ -114,7 +116,7 @@ public class DateUtil {
         }
     }
 
-    public static long timestampToLong(Timestamp timestamp)  {
+    public static long timestampToLong(Timestamp timestamp) {
         return DateUtil.StringToLong(DateUtil.timestampToString(timestamp));
     }
 
@@ -140,14 +142,15 @@ public class DateUtil {
         }
         return time;
     }
-    
+
     /**
      * yyyy-MM-dd HH:mm:ss 转成 其他格式字符串时间
+     *
      * @param timeStr
      * @param pattern
      * @return
      */
-    public static String formatDateStr(String timeStr,String pattern) {
+    public static String formatDateStr(String timeStr, String pattern) {
         if (StringUtil.isNullOrEmpty(timeStr)) {
             return timeStr;
         }
@@ -185,28 +188,29 @@ public class DateUtil {
 
     /**
      * 获取hour前或者后的时间
-     * @param date 
-     * @param hour 
+     *
+     * @param date
+     * @param hour
      * @return
      */
-	public static String getTimeByHour(Date date, int hour) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH");
-		Calendar rightNow = Calendar.getInstance();
-		rightNow.setTime(date);
-		rightNow.add(Calendar.HOUR, hour);
-		Date dt1 = rightNow.getTime();
-		return sdf.format(dt1);
-	}
-	
-	public static String dateTransform(String date) {
-		String dateStr="";
-		SimpleDateFormat format = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss z",Locale.ENGLISH);
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		try {
-			dateStr= df.format(format.parse(date));
-		} catch (ParseException e) {
+    public static String getTimeByHour(Date date, int hour) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH");
+        Calendar rightNow = Calendar.getInstance();
+        rightNow.setTime(date);
+        rightNow.add(Calendar.HOUR, hour);
+        Date dt1 = rightNow.getTime();
+        return sdf.format(dt1);
+    }
+
+    public static String dateTransform(String date) {
+        String dateStr = "";
+        SimpleDateFormat format = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss z", Locale.ENGLISH);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            dateStr = df.format(format.parse(date));
+        } catch (ParseException e) {
             log.info("DateUtil Method dateTransform ParseException");
-		}
-		return dateStr;
-	}
+        }
+        return dateStr;
+    }
 }
