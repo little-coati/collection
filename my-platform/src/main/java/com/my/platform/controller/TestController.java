@@ -32,4 +32,17 @@ public class TestController {
         testService.testException();
         return Result.ok("ok");
     }
+
+    /**
+     * 测试异常回滚
+     *
+     * @param type 测试类型：0-方法内捕捉异常，1-未捕捉
+     * @return
+     */
+    @GetMapping("testRollBack")
+    public Result testRollBack(String type) {
+        log.info("测试异常回滚");
+        testService.testRollBack(type);
+        return Result.ok("ok");
+    }
 }
